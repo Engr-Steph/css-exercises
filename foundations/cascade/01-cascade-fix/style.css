@@ -1,42 +1,54 @@
+/* Base */
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.para,
-.small-para {
-  color: hsl(0, 0%, 0%);
-  font-weight: 800;
-}
-
-.small-para {
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.para {
+/* Parent (thin text) — use class-only selector so it is NOT overly specific */
+.text {
+  color: #000;
   font-size: 22px;
+  font-weight: 100; /* thin */
 }
 
-.confirm {
+/* Paragraphs (more visual importance) — placed after .text so they override */
+.para {
+  font-size: 64px;   /* increased to match image proportions */
+  font-weight: 900;  /* extra bold */
+  color: #000;
+  margin: 0 0 8px;
+}
+
+p.small-para {
+  font-size: 24px;
+  font-weight: 900;
+  color: #000;
+  margin: 0 0 12px;
+}
+
+/* Buttons */
+.button {
+  background-color: #fff;
+  color: #000;
+  font-size: 36px;        /* large to match the screenshot */
+  border: 3px solid #000; /* black outline like image */
+  padding: 6px 12px;
+  display: inline-block;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+/* ID overrides .button (higher specificity) */
+#confirm {
   background: green;
   color: white;
-  font-weight: bold;
-} 
-
-.button {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  font-size: 20px;
+  font-weight: 900;
+  border: 3px solid #000;
+  padding: 6px 14px;
 }
 
+/* Child (will override parent .text) */
 .child {
-  color: rgb(0, 0, 0);
+  color: #000;
   font-weight: 800;
   font-size: 14px;
-}
-
-div.text {
-  color: rgb(0, 0, 0);
-  font-size: 22px;
-  font-weight: 100;
 }
